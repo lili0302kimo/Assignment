@@ -1,0 +1,30 @@
+Test Plan - Stress Test 
+
+1. Test purpose
+驗證國泰銀行網頁在壓力環境下的效能表現，確保系統在一定併發量下仍能保持穩定，符合性能指標要求
+
+2. Test Scope
+- 針對 API 進行壓力測試：https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-10-01/v1/currencies/twd.json 
+- 透過 JMeter 模擬 10、20 位用戶同時造訪網站。
+- 測試時間：1 分鐘
+- 監控指標：TPS (Throughput)/ Error rate/ Response time
+
+3. Test Scenario
+Test Steps:
+1. 使用壓力測試工具（JMeter）模擬 10、20 位用戶造訪 API
+2. 設定 1 分鐘內達到 10、20 位用戶同時訪問 API
+3. 驗證 API 回應碼是否為 200
+4. 驗證回應內容是否包含 jpy
+5. 確認 TPS 是否大於 5，錯誤率是否低於 1%，回應時間是否低於 500ms
+
+
+ 4. Test Expectation
+
+驗收標準:
+1. TPS >5
+2. Error rate <1%
+3. Response time <500ms
+4. Response Code 200
+5. Response Content with jpy inclued 
+
+
